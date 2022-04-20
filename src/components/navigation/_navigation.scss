@@ -1,5 +1,4 @@
 .nav-container {
-  border: 2px solid red;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -7,9 +6,20 @@
   background-color: transparent;
 }
 
+.logo {
+  margin: 0 $elem-margin;
+}
+
 .nav-elements {
   display: flex;
+  justify-content: space-between;
   list-style: none;
+  font-weight: 700;
+  font-size: 1.25rem;
+
+  li {
+    margin-right: $elem-margin;
+  }
 }
 
 a {
