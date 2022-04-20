@@ -1,1 +1,30 @@
-/* No CSS *//*# sourceMappingURL=style.css.map */
+.nav-container {
+  border: 2px solid red;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 80px;
+  background-color: transparent;
+}
+
+.nav-elements {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  color: inherit;
+}
+/*# sourceMappingURL=style.css.map */
