@@ -10,9 +10,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { setMovies } from "./redux/actions/index";
 
 function App() {
-  const moviesArray = useSelector((state) => state.moviesReducer);
   const dispatch = useDispatch();
-  console.log(moviesArray);
+
   const movieAPIKey = "api_key=1b754eb2e7ec29055fdde6d441153fa4";
   const baseUrl = "https://api.themoviedb.org/3";
   const popularUrl =
@@ -24,13 +23,18 @@ function App() {
       .then((data) => dispatch(setMovies(data.results)));
   }, []);
 
-  // const displayMovies = moviesArray.map((movie) => {
-  //   return <div key={uuidv4()}>{movie.original_title} </div>;
-  // });
+  const moviesArray = useSelector((state) => state.moviesReducer);
+
+  const displayMovies = moviesArray.map((movie) => {
+    return <div key={uuidv4()}>{movie.original_title} </div>;
+  });
+
+  console.log(moviesArray);
 
   return (
     <div className="App">
       <NavBar />
+      {displayMovies}
       <Switch>
         <Route exact path="/">
           <Home />
