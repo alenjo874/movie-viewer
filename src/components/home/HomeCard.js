@@ -1,8 +1,12 @@
 import React from 'react'
 
-function HomeCard() {
+function HomeCard({backdrop_path}) {
   return (
-    <div>HomeCard</div>
+    <div>
+      <div>
+        <img src={`https://image.tmdb.org/t/p/original${backdrop_path}`} />
+      </div>
+    </div>
   )
 }
 

@@ -5,8 +5,7 @@ import Home from "./components/home/Home";
 import NavBar from "./components/navigation/NavBar";
 import Movies from "./components/movies/Movies";
 import TvSeries from "./components/tvSeries/TvSeries";
-import { v4 as uuidv4 } from "uuid";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { setMovies } from "./redux/actions/index";
 
 function App() {
@@ -23,18 +22,14 @@ function App() {
       .then((data) => dispatch(setMovies(data.results)));
   }, []);
 
-  const moviesArray = useSelector((state) => state.moviesReducer);
 
-  const displayMovies = moviesArray.map((movie) => {
-    return <div key={uuidv4()}>{movie.original_title} </div>;
-  });
 
-  console.log(moviesArray);
+
 
   return (
     <div className="App">
       <NavBar />
-      {displayMovies}
+    
       <Switch>
         <Route exact path="/">
           <Home />
