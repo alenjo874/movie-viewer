@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import {
   setSlideMovie,
   resetSlideMovie,
@@ -20,13 +20,17 @@ function HomeCard({
   const dispatchNext = useDispatch();
   const length = moviesArray.length - 1;
 
+  const [trailer, setTrailer] = useState();
+
   useEffect(() => {
     fetch(
       `http://api.themoviedb.org/3/movie/${id}/videos?api_key=1b754eb2e7ec29055fdde6d441153fa4`
     )
       .then((res) => res.json())
-      .then((data) => console.log(data));
+      .then((data) => setTrailer(data.results[0].key));
   }, []);
+
+  console.log(trailer);
 
   function handleNext() {
     if (slideMovieIndex < length) {
@@ -86,6 +90,15 @@ function HomeCard({
           >
             {overview}
           </motion.p>
+          <iframe
+            src={`https://www.youtube.com/embed/${trailer}`}
+            width="853"
+            height="480"
+            frameborder="0"
+            allow="autoplay; encrypted-media"
+            allowfullscreen
+            title="video"
+          />
         </div>
         <motion.div
           className="home-poster"
