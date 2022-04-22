@@ -5,8 +5,9 @@ export function setMovies(movies) {
   };
 }
 
-export function slideMovie() {
+export function setSlideMovie() {
   return {
     type: "INCREMENT"
   }
 }
+
