@@ -1,6 +1,7 @@
 import React from "react";
 import { setSlideMovie, resetSlideMovie } from "../../redux/actions/index";
 import { useDispatch } from "react-redux";
+import { motion } from "framer-motion";
 
 function HomeCard({
   backdrop_path,
@@ -12,7 +13,7 @@ function HomeCard({
   const dispatchNext = useDispatch();
 
   function handleNext() {
-    if (slideMovieIndex < moviesArray.length-1) {
+    if (slideMovieIndex < moviesArray.length - 1) {
       dispatchNext(setSlideMovie());
     } else {
       dispatchNext(resetSlideMovie());
@@ -25,7 +26,20 @@ function HomeCard({
         <img src={`https://image.tmdb.org/t/p/original${backdrop_path}`} />
       </div>
       <div className="home-movie-details">
-        <h4>{original_title}</h4>
+        <motion.h4
+          initial={{ x: -25 }}
+          animate={{
+            opacity: 1,
+            x: 0,
+            transition: {
+              duration: 0.26,
+              type: "show",
+              ease: "easeIn",
+            },
+          }}
+        >
+          {original_title}
+        </motion.h4>
         <p>{overview}</p>
         <button onClick={handleNext}>NEXT</button>
       </div>
