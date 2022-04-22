@@ -1,6 +1,7 @@
 .home-backdrop {
   height: 100vh;
   background: rgba(0, 0, 0, 0.6);
+  position: relative;
 
   img {
     object-fit: cover;
@@ -9,4 +10,12 @@
     -webkit-filter: brightness(50%);
     filter: brightness(50%);
   }
+}
+
+.home-movie-details {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
 }

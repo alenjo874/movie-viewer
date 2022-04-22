@@ -9,7 +9,8 @@ function Home() {
   const displayHomeMovies = moviesArray.map((movie) => {
     return <HomeCard key={uuidv4()} {...movie} />;
   });
-  return <div>{displayHomeMovies}</div>;
+
+  return <div>{displayHomeMovies[0]}</div>;
 }
 
 export default Home;
