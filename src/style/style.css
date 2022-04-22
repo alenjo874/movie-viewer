@@ -38,15 +38,15 @@ a {
 }
 
 .home-backdrop {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  border: 2px solid red;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
 }
 
 .home-backdrop img {
   -o-object-fit: cover;
      object-fit: cover;
-  min-height: 100vh;
+  height: 100%;
+  -webkit-filter: brightness(50%);
+  filter: brightness(50%);
 }
 /*# sourceMappingURL=style.css.map */

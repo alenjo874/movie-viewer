@@ -1,9 +1,12 @@
 .home-backdrop {
-  width: fit-content;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
 
-  border: 2px solid red;
   img {
     object-fit: cover;
-    min-height: 100vh;
+    height: 100%;
+
+    -webkit-filter: brightness(50%);
+    filter: brightness(50%);
   }
 }
