@@ -7,7 +7,12 @@ export function setMovies(movies) {
 
 export function setSlideMovie() {
   return {
-    type: "INCREMENT"
-  }
+    type: "INCREMENT",
+  };
 }
 
+export function resetSlideMovie() {
+  return {
+    type: "RESET",
+  };
+}
