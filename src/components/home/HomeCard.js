@@ -9,6 +9,7 @@ import { useDispatch } from "react-redux";
 import { motion } from "framer-motion";
 
 function HomeCard({
+  id,
   backdrop_path,
   poster_path,
   original_title,
@@ -18,6 +19,14 @@ function HomeCard({
 }) {
   const dispatchNext = useDispatch();
   const length = moviesArray.length - 1;
+
+  useEffect(() => {
+    fetch(
+      `http://api.themoviedb.org/3/movie/${id}/videos?api_key=1b754eb2e7ec29055fdde6d441153fa4`
+    )
+      .then((res) => res.json())
+      .then((data) => console.log(data));
+  }, []);
 
   function handleNext() {
     if (slideMovieIndex < length) {
@@ -78,12 +87,25 @@ function HomeCard({
             {overview}
           </motion.p>
         </div>
-        <div className="home-poster">
+        <motion.div
+          className="home-poster"
+          initial={{ y: -25, opacity: 0 }}
+          animate={{
+            opacity: 1,
+            y: 0,
+            transition: {
+              duration: 0.26,
+              stiffness: 50,
+              type: "spring",
+              ease: "easeIn",
+            },
+          }}
+        >
           <img
             src={`https://image.tmdb.org/t/p/original${poster_path}`}
             alt="movie poster"
           />
-        </div>
+        </motion.div>
       </div>
 
       <div className="panel next-panel" onClick={handleNext}></div>

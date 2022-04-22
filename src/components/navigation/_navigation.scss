@@ -1,9 +1,14 @@
 .nav-container {
   display: flex;
+  z-index: 2;
+  position: absolute;
   justify-content: space-between;
   align-items: center;
   height: $nav-height;
   background-color: transparent;
+  width: 100%;
+  color: #fff;
+  font-size: 1.25rem;
 }
 
 .logo {
@@ -18,7 +23,7 @@
   font-size: 1.25rem;
 
   li {
-    margin-right: $elem-margin;
+    margin-right: $elem-margin*3;
   }
 }
 
