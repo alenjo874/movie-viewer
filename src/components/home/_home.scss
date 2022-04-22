@@ -7,15 +7,50 @@
     object-fit: cover;
     height: 100%;
 
-    -webkit-filter: brightness(50%);
-    filter: brightness(50%);
+    -webkit-filter: brightness(40%);
+    filter: brightness(40%);
   }
 }
 
 .home-movie-details {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: #fff;
+  height: 80%;
+  max-height: 300px;
+}
+
+.next-panel {
+  position: absolute;
+  top: $nav-height;
+  right: 0%;
+  height: 100%;
+  max-width: 150px;
+  width: 10%;
+  transition: 0.3s;
+
+  &:hover {
+    transition: 0.3s;
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+}
+
+.back-panel {
+  position: absolute;
+  top: $nav-height;
+  left: 0%;
+  height: 100%;
+  max-width: 150px;
+  width: 10%;
+  transition: 0.3s;
+
+  &:hover {
+    transition: 0.3s;
+    background-color: rgba(255, 255, 255, 0.1);
+  }
 }

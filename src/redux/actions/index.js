@@ -11,8 +11,21 @@ export function setSlideMovie() {
   };
 }
 
+export function setBackSlide() {
+  return {
+    type: "DECREMENT",
+  };
+}
+
 export function resetSlideMovie() {
   return {
     type: "RESET",
+  };
+}
+
+export function setLastSlide(last) {
+  return {
+    type: "LAST",
+    payload: last,
   };
 }

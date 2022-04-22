@@ -1,5 +1,10 @@
-import React from "react";
-import { setSlideMovie, resetSlideMovie } from "../../redux/actions/index";
+import React, { useEffect } from "react";
+import {
+  setSlideMovie,
+  resetSlideMovie,
+  setBackSlide,
+  setLastSlide,
+} from "../../redux/actions/index";
 import { useDispatch } from "react-redux";
 import { motion } from "framer-motion";
 
@@ -11,14 +16,27 @@ function HomeCard({
   moviesArray,
 }) {
   const dispatchNext = useDispatch();
+  const length = moviesArray.length - 1;
 
   function handleNext() {
-    if (slideMovieIndex < moviesArray.length - 1) {
+    if (slideMovieIndex < length) {
       dispatchNext(setSlideMovie());
     } else {
       dispatchNext(resetSlideMovie());
     }
   }
+
+  function handleBack() {
+    if (slideMovieIndex === 0) {
+      dispatchNext(setLastSlide(length));
+    } else {
+      dispatchNext(setBackSlide());
+    }
+  }
+
+  // useEffect(() => {
+  //   const timer = setTimeout(() => handleNext(), 30000);
+  // }, []);
 
   return (
     <div className="home-card-container">
@@ -27,22 +45,39 @@ function HomeCard({
       </div>
       <div className="home-movie-details">
         <motion.h4
-          initial={{ x: -25 }}
+          initial={{ y: -25, opacity: 0 }}
           animate={{
             opacity: 1,
-            x: 0,
+            y: 0,
             transition: {
               duration: 0.26,
-              type: "show",
+              stiffness: 50,
+              type: "spring",
               ease: "easeIn",
             },
           }}
         >
           {original_title}
         </motion.h4>
-        <p>{overview}</p>
-        <button onClick={handleNext}>NEXT</button>
+        <motion.p
+          initial={{ y: -25, opacity: 0 }}
+          animate={{
+            opacity: 1,
+            y: 0,
+            transition: {
+              delay: 0.1,
+              duration: 0.26,
+              stiffness: 50,
+              type: "spring",
+              ease: "easeIn",
+            },
+          }}
+        >
+          {overview}
+        </motion.p>
       </div>
+      <div className="next-panel" onClick={handleNext}></div>
+      <div className="back-panel" onClick={handleBack}></div>
     </div>
   );
 }

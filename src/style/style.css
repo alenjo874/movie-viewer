@@ -47,16 +47,62 @@ a {
   -o-object-fit: cover;
      object-fit: cover;
   height: 100%;
-  -webkit-filter: brightness(50%);
-  filter: brightness(50%);
+  -webkit-filter: brightness(40%);
+  filter: brightness(40%);
 }
 
 .home-movie-details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   position: absolute;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   color: #fff;
+  height: 80%;
+  max-height: 300px;
+}
+
+.next-panel {
+  position: absolute;
+  top: 80px;
+  right: 0%;
+  height: 100%;
+  max-width: 150px;
+  width: 10%;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.next-panel:hover {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.back-panel {
+  position: absolute;
+  top: 80px;
+  left: 0%;
+  height: 100%;
+  max-width: 150px;
+  width: 10%;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.back-panel:hover {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  background-color: rgba(255, 255, 255, 0.1);
 }
 /*# sourceMappingURL=style.css.map */
