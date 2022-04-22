@@ -4,3 +4,9 @@ export function setMovies(movies) {
     payload: movies,
   };
 }
+
+export function slideMovie() {
+  return {
+    type: "INCREMENT"
+  }
+}
