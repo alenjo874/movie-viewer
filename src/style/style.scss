@@ -5,3 +5,40 @@
 h2 {
   font-size: 5rem;
 }
+
+.update-pro-popup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80%;
+  transform: translate(-50%, -50%);
+  border: 2px solid red;
+}
+
+.submit-confirm {
+  position: relative;
+  width: 50%;
+  max-width: 450px;
+  min-width: 150px;
+  background-color: #ffffff;
+}
+
+.cancel-container {
+  display: flex;
+  justify-content: flex-end;
+  .x-svg {
+    width: 4%;
+    transition: 0.2s;
+    &:hover {
+      cursor: pointer;
+
+      transition: 0.2s;
+    }
+    &:active {
+      transition: 0.2s;
+    }
+  }
+}
