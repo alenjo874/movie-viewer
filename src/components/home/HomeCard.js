@@ -62,7 +62,7 @@ function HomeCard({
   const trailerPopUp = (
     <div className="update-pro-popup">
       <motion.div
-        className="submit-confirm"
+        className="submit-confirm trailer-popup"
         initial={{ opacity: 0 }}
         animate={{
           opacity: 1,

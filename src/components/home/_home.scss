@@ -68,3 +68,12 @@
     border-radius: $border-radius;
   }
 }
+
+.trailer-popup {
+  border: 2px solid red;
+  width: 100%;
+
+  iframe {
+    width: 100%;
+  }
+}

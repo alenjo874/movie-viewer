@@ -129,6 +129,15 @@ a {
   border-radius: 5px;
 }
 
+.trailer-popup {
+  border: 2px solid red;
+  width: 100%;
+}
+
+.trailer-popup iframe {
+  width: 100%;
+}
+
 h2 {
   font-size: 5rem;
 }
@@ -149,7 +158,6 @@ h2 {
   width: 80%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  border: 2px solid red;
 }
 
 .submit-confirm {
