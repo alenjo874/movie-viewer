@@ -6,7 +6,7 @@ import {
   setLastSlide,
 } from "../../redux/actions/index";
 import { useDispatch } from "react-redux";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 function HomeCard({
   id,
@@ -156,9 +156,7 @@ function HomeCard({
           />
         </motion.div>
       </div>
-
-      {showTrailer ? trailerPopUp : null}
-
+      <AnimatePresence>{showTrailer ? trailerPopUp : null}</AnimatePresence>
       <div className="panel next-panel" onClick={handleNext}></div>
       <div className="panel back-panel" onClick={handleBack}></div>
     </div>
